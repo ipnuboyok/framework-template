@@ -230,10 +230,10 @@
             </fileSet>
 
             <!-- profiles 目录 -->
-            <fileSet filtered="true" encoding="UTF-8">
+            <fileSet filtered="false" encoding="UTF-8">
                 <directory>src/main/profiles</directory>
                 <includes>
-                    <include>**/*.xml</include>
+                    <include>**/*.yml</include>
                     <include>**/*.properties</include>
                 </includes>
             </fileSet>
@@ -242,6 +242,7 @@
             <fileSet filtered="true" encoding="UTF-8">
                 <directory>src/main/docker</directory>
                 <includes>
+                    <include>*</include>
                     <include>**/*.*</include>
                 </includes>
             </fileSet>
