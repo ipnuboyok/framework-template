@@ -1,4 +1,4 @@
-package com.abclonal.test1.api.domain.request;
+package ${package}.api.domain.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
