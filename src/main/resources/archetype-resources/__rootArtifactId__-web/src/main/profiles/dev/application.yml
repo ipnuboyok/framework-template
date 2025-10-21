@@ -10,15 +10,11 @@ spring:
       config:
         server-addr: ${NACOS_SERVER_ADDR:127.0.0.1:8848}
         namespace: ${NACOS_NAMESPACE:public}
-        file-extension: yml
+        file-extension: yaml
         group: ${NACOS_GROUP:DEFAULT_GROUP}
         prefix: ${spring.application.name}
         import-check:
           enabled: false
-        shared-configs:
-          - data-id: common.yml
-            group: DEFAULT_GROUP
-            refresh: true
         enabled: false
       discovery:
         server-addr: ${NACOS_SERVER_ADDR:127.0.0.1:8848}
@@ -27,7 +23,7 @@ spring:
         enabled: false
   config:
     import:
-      - optional:nacos:${spring.application.name}.yml
+      - optional:nacos:${spring.application.name}.yaml
       - optional:nacos:common.yml
 
   # ✅ 数据源配置移动到正确的位置
@@ -75,3 +71,11 @@ logging:
     org.mybatis: DEBUG
 
 debug: false
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000    # 连接超时时间
+        readTimeout: 10000      # 读取超时时间
+        loggerLevel: full       # 日志级别

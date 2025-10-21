@@ -1,7 +1,10 @@
 package ${package}.biz;
 
 import ${package}.domain.TestDTO;
-
+import ${package}.domain.TestDTO;
+import ${package}.api.domain.request.UserRequestDTO;
+import ${package}.api.domain.response.UserResponseDTO;
+import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 /**
@@ -12,4 +15,8 @@ import java.util.List;
  */
 public interface TestBiz {
     List<TestDTO> get();
+
+    String getUserById(Long id);
+
+    ResponseEntity<UserResponseDTO> createUser(UserRequestDTO request);
 }
