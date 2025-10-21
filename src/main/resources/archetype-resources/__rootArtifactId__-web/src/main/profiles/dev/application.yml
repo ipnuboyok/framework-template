@@ -24,7 +24,7 @@ spring:
   config:
     import:
       - optional:nacos:${spring.application.name}.yaml
-      - optional:nacos:common.yml
+      - optional:nacos:common.yaml
 
   # ✅ 数据源配置移动到正确的位置
   datasource:

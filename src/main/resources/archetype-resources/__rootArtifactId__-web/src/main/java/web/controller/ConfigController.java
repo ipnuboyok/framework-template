@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 @Slf4j
 public class ConfigController {
-    @Value("${esc.d}{custom.config:default value}")  // 从Nacos读取 custom.config 的值
+    @Value("${" + "custom.config:default value" + "}")// 从Nacos读取 custom.config 的值
     private String configValue;
 
-    @Value("$${esc.d}{spring.application.name:unknown}")
+    @Value("${" + "spring.application.name:unknown" + "}")
     private String appName;
 
     @GetMapping("/config")
